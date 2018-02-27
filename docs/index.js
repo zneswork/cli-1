@@ -54,6 +54,17 @@ const getNestedCategories = async (command) => {
     return nestedCategory;
 };
 
+
+const getWeight = async (docs) => {
+    if (!docs.weight) {
+        return docs.weight;
+    }
+    else {
+        getWeight()
+    }
+    return nestedCategory;
+};
+
 const deleteTempFolder = async () => {
     await rimraf(TEMP_DIR);
 };
@@ -91,7 +102,7 @@ const createCommandFile = async (nestedCategory,docs) => {
     // HEADER STRING
     let headerString;
     if (docs.subCategory) {
-        headerString = `+++\ntitle = "${docs.subCategory}"\n+++\n\n`;
+        headerString = `+++\ntitle = "${docs.subCategory}"\nweight = ${docs.weight}\n+++\n\n`;
     } else {
         headerString = `${docs.header}\n\n`;
     }
