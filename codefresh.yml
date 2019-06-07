@@ -9,6 +9,7 @@ steps:
     commands:
         - yarn install --frozen-lockfile
 
+
   eslint:
     title: 'Running linting logic'
     image: codefresh/node-tester-image:8.8.0
